@@ -881,7 +881,7 @@ console.log(halfs(stats))
 
 //ici on utilise  les backticks on a la possibilité 
 //de mettre un chaine de caractere accompagné  de variables
-
+//we can use multiple lines and also we can double quote and don't skipe them
 const person = {
     name: "meda",
     age: 30
@@ -893,11 +893,21 @@ ${person.age}
 console.log(greatings)
 
 
-const result = {
+const result_list = {
     success: ["max-length", "no-amd", "prefer-arrow-functions"],
     failure: ["no-var", "var-on-top", "line-break"],
     skipped: ["id-blacklist", "no-dup-keys"]
 }
 
 
-function makeList(arr)
+function makeList(arr){
+    var resultDisplayArray = [];
+    for(i = 0; i < arr.failure.length; i++){
+        resultDisplayArray.push(`<li class="text-warning">${arr.failure[i]}<\li>`);
+    }
+    return resultDisplayArray;
+}
+
+console.log(makeList(result_list));
+
+//Write Concise Object litteral Declarations Using Simple Fields
